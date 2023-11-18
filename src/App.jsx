@@ -21,25 +21,27 @@ function App() {
 
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6">
-            <div className="card">
-              <div className="card-body">
-                <h3>Name: {isLoggedIn?.displayName}</h3>
-                <h3>Email: {isLoggedIn?.email}</h3>
-                <h3>
-                  <img
-                    style={{ width: "100px", height: "100px" }}
-                    src={isLoggedIn?.photoURL}
-                    alt=""
-                  />
-                </h3>
+      {isLoggedIn && (
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6">
+              <div className="card">
+                <div className="card-body">
+                  <h3>Name: {isLoggedIn?.displayName}</h3>
+                  <h3>Email: {isLoggedIn?.email}</h3>
+                  <h3>
+                    <img
+                      style={{ width: "100px", height: "100px" }}
+                      src={isLoggedIn?.photoURL}
+                      alt=""
+                    />
+                  </h3>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
       <Register isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
     </>
